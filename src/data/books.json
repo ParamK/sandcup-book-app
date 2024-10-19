@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "title": "The Stranger In The Lake",
+        "author": "Sloane Collins",
+        "thumbnail": "../../images/books/thumbnail-1.png",
+        "description": "A classic European novel about wealth, love, and the European Dream."
+    },
+    {
+        "id": 2,
+        "title": "Made For Revenge",
+        "author": "Kris Stone",
+        "thumbnail": "../../images/books/thumbnail-2.png",
+        "description": "A classic European novel about wealth, love, and the European Dream."
+    },
+    {
+        "id": 3,
+        "title": "Unseen Shadow",
+        "author": "Sloane Collins",
+        "thumbnail": "../../images/books/thumbnail-3.png",
+        "description": "A classic European novel about wealth, love, and the European Dream."
+    },
+    {
+        "id": 4,
+        "title": "Abyss retreat",
+        "author": "Jane Doe",
+        "thumbnail": "../../images/books/thumbnail-4.png",
+        "description": "A classic European novel about wealth, love, and the European Dream."
+    },
+    {
+        "id": 5,
+        "title": "Case of the Blue Falcon",
+        "author": "Drew Wheeler",
+        "thumbnail": "../../images/books/thumbnail-5.png",
+        "description": "A classic European novel about wealth, love, and the European Dream."
+    },
+    {
+        "id": 6,
+        "title": "Sky Full of Stars",
+        "author": "Sloane Collins",
+        "thumbnail": "../../images/books/thumbnail-6.png",
+        "description": "A classic European novel about wealth, love, and the European Dream."
+    },
+    {
+        "id": 7,
+        "title": "Solar Sinking",
+        "author": "Keelan Preston",
+        "thumbnail": "../../images/books/thumbnail-7.png",
+        "description": "A classic European novel about wealth, love, and the European Dream."
+    },
+    {
+        "id": 8,
+        "title": "The Here And Now",
+        "author": "Jillian Lawrence",
+        "thumbnail": "../../images/books/thumbnail-8.png",
+        "description": "A classic European novel about wealth, love, and the European Dream."
+    },
+    {
+        "id": 9,
+        "title": "The Fractured Time",
+        "author": "Justice Walker",
+        "thumbnail": "../../images/books/thumbnail-9.png",
+        "description": "A classic European novel about wealth, love, and the European Dream."
+    }
+]
