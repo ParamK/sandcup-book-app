@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addToReadingList, removeFromReadingList } from '../../features/booksSlice';
 import BookCard from '../BookCard/BookCard';
-import './Booklist.css';
+import './BookList.css';
 
 const BookList = ({ type }) => {
     const dispatch = useDispatch();
