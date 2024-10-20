@@ -20,25 +20,6 @@
     text-transform: uppercase;
 }
 
-.notification {
-    position: fixed;
-    top: 8rem;
-    right: 0;
-    left: 0;
-    margin-inline: auto;
-    max-width: 30rem;
-    background-color: var(--success);
-    padding: 1.5rem;
-    z-index: var(--notification-index);
-    opacity: 1;
-}
-
-.notification-text {
-    text-align: center;
-    font: var(--font-weight-regular) 1.4rem var(--font-primary);
-    color: var(--pure-white);
-}
-
 @media (min-width: 768px) {
     .book-list {
         gap: 5rem 3rem;

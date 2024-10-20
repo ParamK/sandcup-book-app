@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import booksData from '../data/books.json';
 
+// Load the initial reading list from localStorage, or default to an empty array
+const storedReadingList = JSON.parse(localStorage.getItem('readingList')) || [];
+
 const initialState = {
     books: booksData,
-    readingList: JSON.parse(localStorage.getItem('readingList')) || [],
-    notification: null, // New state for notification
+    readingList: storedReadingList, // Use the stored reading list on page load
 };
 
 const booksSlice = createSlice({
@@ -12,27 +14,22 @@ const booksSlice = createSlice({
     initialState,
     reducers: {
         addToReadingList: (state, action) => {
-            const bookId = action.payload;
-            const bookToAdd = state.books.find((book) => book.id === bookId);
-            const alreadyInReadingList = state.readingList.some((book) => book.id === bookId);
+            const book = state.books.find((book) => book.id === action.payload);
+            const alreadyInList = state.readingList.some((item) => item.id === action.payload);
 
-            if (!alreadyInReadingList && bookToAdd) {
-                state.readingList.push(bookToAdd);
+            if (!alreadyInList) {
+                state.readingList.push(book);
+                // Update localStorage
                 localStorage.setItem('readingList', JSON.stringify(state.readingList));
-                state.notification = `Added "${bookToAdd.title}" to your reading list!`; // Set notification
             }
         },
         removeFromReadingList: (state, action) => {
-            const bookId = action.payload;
-            state.readingList = state.readingList.filter((book) => book.id !== bookId);
+            state.readingList = state.readingList.filter((book) => book.id !== action.payload);
+            // Update localStorage
             localStorage.setItem('readingList', JSON.stringify(state.readingList));
-            state.notification = null; // Clear notification when removing
-        },
-        clearNotification: (state) => {
-            state.notification = null; // Action to clear notification
         },
     },
 });
 
-export const { addToReadingList, removeFromReadingList, clearNotification } = booksSlice.actions;
+export const { addToReadingList, removeFromReadingList } = booksSlice.actions;
 export default booksSlice.reducer;
