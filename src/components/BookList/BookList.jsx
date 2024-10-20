@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addToReadingList, removeFromReadingList } from '../../features/booksSlice';
 import BookCard from '../BookCard/BookCard';
 import './Booklist.css';
@@ -7,8 +8,14 @@ import './Booklist.css';
 const BookList = ({ type }) => {
     const dispatch = useDispatch();
     const books = useSelector((state) => state.books.books);
+    const navigate = useNavigate();
     const readingList = useSelector((state) => state.books.readingList);
     const list = type === 'catalog' ? books : readingList;
+
+    const handleAddToReadingList = (bookId) => {
+        dispatch(addToReadingList(bookId));
+        navigate('/reading-list');
+    };
 
     return (
         <div className="book-list">
@@ -18,12 +25,13 @@ const BookList = ({ type }) => {
                     book={book}
                     onAction={() =>
                         type === 'catalog'
-                            ? dispatch(addToReadingList(book.id))
+                            ? handleAddToReadingList(book.id)
                             : dispatch(removeFromReadingList(book.id))
                     }
-                    actionLabel={type === 'catalog' ? 'Add to Reading List' : 'Remove from Reading List'}
+                    actionLabel={type === 'catalog' ? 'Add to Reading List' : 'Remove from List'}
                 />
-            )) : <p>No books to display.</p>}
+            )) : <h2 className="empty-message">{type === 'catalog' ? 'No books available' : 'Your reading list is empty'}</h2>
+            }
         </div>
     );
 };

@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import booksData from '../data/books.json'; // Import the JSON data
+import booksData from '../data/books.json';
 
 const initialState = {
     books: booksData,
-    readingList: [],
+    readingList: JSON.parse(localStorage.getItem('readingList')) || [],
 };
 
 const booksSlice = createSlice({
@@ -11,13 +11,20 @@ const booksSlice = createSlice({
     initialState,
     reducers: {
         addToReadingList: (state, action) => {
-            const book = state.books.find((book) => book.id === action.payload);
-            if (!state.readingList.includes(book)) {
-                state.readingList.push(book);
+            const bookId = action.payload;
+            const bookToAdd = state.books.find((book) => book.id === bookId);
+
+            const alreadyInReadingList = state.readingList.some((book) => book.id === bookId);
+
+            if (!alreadyInReadingList && bookToAdd) {
+                state.readingList.push(bookToAdd);
+                localStorage.setItem('readingList', JSON.stringify(state.readingList));
             }
         },
         removeFromReadingList: (state, action) => {
-            state.readingList = state.readingList.filter((book) => book.id !== action.payload);
+            const bookId = action.payload;
+            state.readingList = state.readingList.filter((book) => book.id !== bookId);
+            localStorage.setItem('readingList', JSON.stringify(state.readingList));
         }
     },
 });

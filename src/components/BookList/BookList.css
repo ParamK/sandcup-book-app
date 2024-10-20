@@ -4,6 +4,12 @@
     gap: 5rem;
 }
 
+.empty-message {
+    font: var(--font-weight-bold) 2rem var(--font-primary);
+    text-align: center;
+    text-transform: uppercase;
+}
+
 @media (min-width: 768px) {
     .book-list {
         gap: 5rem 3rem;
