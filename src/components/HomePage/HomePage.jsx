@@ -1,12 +1,11 @@
-// src/components/HomePage.js
 import React from 'react';
-import BookList from './BookList';
+import BookList from '../BookList/BookList';
 
 const HomePage = () => {
     return (
-        <div>
+        <React.Fragment>
             <BookList type="catalog" />
-        </div>
+        </React.Fragment>
     );
 };
 

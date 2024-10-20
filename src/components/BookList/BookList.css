@@ -1,0 +1,23 @@
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+@media (min-width: 768px) {
+    .book-list {
+        gap: 5rem 3rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .book-list {
+        gap: 5rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    .book-list {
+        gap: 6rem;
+    }
+}

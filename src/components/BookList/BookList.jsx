@@ -1,14 +1,13 @@
-// src/components/BookList.js
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToReadingList, removeFromReadingList } from '../features/booksSlice';
-import BookCard from './BookCard';
+import { addToReadingList, removeFromReadingList } from '../../features/booksSlice';
+import BookCard from '../BookCard/BookCard';
+import './Booklist.css';
 
 const BookList = ({ type }) => {
     const dispatch = useDispatch();
     const books = useSelector((state) => state.books.books);
     const readingList = useSelector((state) => state.books.readingList);
-
     const list = type === 'catalog' ? books : readingList;
 
     return (

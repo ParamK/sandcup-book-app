@@ -1,51 +1,35 @@
-/*Convert px to rems; 1rem = 10px */
+:root {
+  --primary-color: rgb(58, 57, 103);
+  --secondary-color: rgb(242, 233, 211);
+  --accent-color: rgb(255, 166, 62);
+  --pure-white: rgb(255, 255, 255);
+
+  --font-primary: "Montserrat", sans-serif;
+  --font-secondary: "Suez One", serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 html {
   font-size: 62.5%;
+  /*Convert px to rems; 1rem = 10px */
+  font-family: var(--font-primary);
 }
 
-:root {
-  /* Color Variables */
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  --accent-color: #e74c3c;
-  --background-color: #f5f5f5;
-  --text-color: #333;
-  /* Dark Gray */
-
-  /* Typography Variables */
-  --font-family-primary: "Montserrat", serif;
-  --font-family-secondary: "Suez One", serif;
-  --font-size-base: 1.6rem;
-  /* Base font size */
-  --font-size-large: 24px;
-  /* Large font size */
-  --font-size-small: 14px;
-  /* Small font size */
-  --line-height: 1.5;
-  /* Line height */
+a {
+  text-decoration: none;
 }
 
-/* Global Styles */
-body {
-  margin: 0;
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height);
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
-
-h1 {
-  font-size: var(--font-size-large);
-  color: var(--primary-color);
-}
-
-h2 {
-  font-size: var(--font-size-base);
-  color: var(--secondary-color);
-}
-
-p {
-  font-size: var(--font-size-small);
-  line-height: var(--line-height);
+ul {
+  list-style: none;
 }
