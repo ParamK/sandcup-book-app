@@ -2,7 +2,16 @@
     display: flex;
     flex-wrap: wrap;
     gap: 5rem;
+}
+
+.book-list-wrap {
     padding-block: calc(3rem + 6rem);
+
+    .main-title {
+        margin-block: 0 2rem;
+        font: var(--font-weight-bold) 2rem var(--font-primary);
+        text-transform: uppercase;
+    }
 }
 
 .empty-message {
@@ -14,6 +23,9 @@
 @media (min-width: 768px) {
     .book-list {
         gap: 5rem 3rem;
+    }
+
+    .book-list-wrap {
         padding-block: calc(3rem + 8rem);
     }
 }

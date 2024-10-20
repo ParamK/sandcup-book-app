@@ -18,21 +18,27 @@ const BookList = ({ type }) => {
     };
 
     return (
-        <div className="book-list">
-            {list.length > 0 ? list.map((book) => (
-                <BookCard
-                    key={book.id}
-                    book={book}
-                    onAction={() =>
-                        type === 'allBooks'
-                            ? handleAddToReadingList(book.id)
-                            : dispatch(removeFromReadingList(book.id))
-                    }
-                    actionLabel={type === 'allBooks' ? 'Add to Reading List' : 'Remove from List'}
-                />
-            )) : <h2 className="empty-message">{type === 'allBooks' ? 'No books available' : 'Your reading list is empty'}</h2>
-            }
+        <div className="book-list-wrap">
+            <h3 className="main-title">
+                {type === 'allBooks' ? "All Books" : "My Books"}
+            </h3>
+            <div className="book-list">
+                {list.length > 0 ? list.map((book) => (
+                    <BookCard
+                        key={book.id}
+                        book={book}
+                        onAction={() =>
+                            type === 'allBooks'
+                                ? handleAddToReadingList(book.id)
+                                : dispatch(removeFromReadingList(book.id))
+                        }
+                        actionLabel={type === 'allBooks' ? 'Add to Reading List' : 'Remove from List'}
+                    />
+                )) : <h2 className="empty-message">{type === 'allBooks' ? 'No books available' : 'Your reading list is empty'}</h2>
+                }
+            </div>
         </div>
+
     );
 };
 
