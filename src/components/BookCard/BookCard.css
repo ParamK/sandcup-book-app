@@ -7,9 +7,7 @@
 
 .fade-out {
     opacity: 0;
-    /* Make the card invisible */
     transform: translateY(-10px);
-    /* Optional: move the card up slightly */
 }
 
 .card-item:hover {
