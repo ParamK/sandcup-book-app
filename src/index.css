@@ -3,6 +3,7 @@
   --secondary-color: rgb(242, 233, 211);
   --accent-color: rgb(255, 166, 62);
   --pure-white: rgb(255, 255, 255);
+  --success: rgba(41, 139, 24);
 
   --font-primary: "Montserrat", sans-serif;
   --font-secondary: "Suez One", serif;
@@ -11,7 +12,8 @@
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
-  --navigation-index: 100
+  --navigation-index: 101;
+  --notification-index: 100;
 }
 
 * {
