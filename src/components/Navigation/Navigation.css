@@ -1,0 +1,41 @@
+.logo {
+    font: var(--font-weight-regular) 2.4rem var(--font-secondary);
+    color: var(--primary-color);
+    width: max-content;
+}
+
+.navigation-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    background: var(--secondary-color);
+    border-radius: 0 0 2rem 2rem;
+    padding: 2rem;
+    z-index: var(--navigation-index);
+}
+
+.navigation-list {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation-link {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    text-align: center;
+    color: var(--primary-color);
+    font: var(--font-weight-bold) 1.6rem var(--font-primary);
+}
+
+@media (min-width: 768px) {
+    .navigation-wrap {
+        height: 8rem;
+        padding: 3rem 6rem;
+    }
+}

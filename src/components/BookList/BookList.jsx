@@ -10,7 +10,7 @@ const BookList = ({ type }) => {
     const books = useSelector((state) => state.books.books);
     const navigate = useNavigate();
     const readingList = useSelector((state) => state.books.readingList);
-    const list = type === 'catalog' ? books : readingList;
+    const list = type === 'allBooks' ? books : readingList;
 
     const handleAddToReadingList = (bookId) => {
         dispatch(addToReadingList(bookId));
@@ -24,13 +24,13 @@ const BookList = ({ type }) => {
                     key={book.id}
                     book={book}
                     onAction={() =>
-                        type === 'catalog'
+                        type === 'allBooks'
                             ? handleAddToReadingList(book.id)
                             : dispatch(removeFromReadingList(book.id))
                     }
-                    actionLabel={type === 'catalog' ? 'Add to Reading List' : 'Remove from List'}
+                    actionLabel={type === 'allBooks' ? 'Add to Reading List' : 'Remove from List'}
                 />
-            )) : <h2 className="empty-message">{type === 'catalog' ? 'No books available' : 'Your reading list is empty'}</h2>
+            )) : <h2 className="empty-message">{type === 'allBooks' ? 'No books available' : 'Your reading list is empty'}</h2>
             }
         </div>
     );

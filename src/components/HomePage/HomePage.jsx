@@ -4,7 +4,7 @@ import BookList from '../BookList/BookList';
 const HomePage = () => {
     return (
         <React.Fragment>
-            <BookList type="catalog" />
+            <BookList type="allBooks" />
         </React.Fragment>
     );
 };
